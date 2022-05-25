@@ -78,4 +78,4 @@ homeDirectory: /home/bob
 
 # Add the File to LDAP
 
-ldapadd -x -D cn=admin,dc=practice,dc=com -W -f add_entries.ldif
+ldapadd -x -D cn=admin,dc=practice,dc=com -W -f /home/kk/Desktop/openldap/add_entries.ldif
