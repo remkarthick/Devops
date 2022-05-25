@@ -74,3 +74,8 @@ gidNumber: 5000
 userPassword: bob123
 loginShell: /bin/bash
 homeDirectory: /home/bob
+
+
+# Add the File to LDAP
+
+ldapadd -x -D cn=admin,dc=practice,dc=com -W -f add_entries.ldif
