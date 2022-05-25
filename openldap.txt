@@ -101,3 +101,10 @@ homeDirectory: /home/bob
 # Add the File to LDAP
 
 ldapadd -x -D cn=admin,dc=practice,dc=kk,dc=com -W -f /home/kk/Desktop/openldap/add_entries.ldif
+
+# Open Firewall Port
+
+sudo ufw allow 389
+sudo ufw allow 22
+sudo ufw enable
+sudo ufw reload
