@@ -11,7 +11,29 @@ sudo systemctl status slapd
 
 sudo dpkg-reconfigure slapd
 
-## Verify if slapd is configured properly
+## If you enable this option, no initial configuration or database will be created for you. Omit OpenLDAP server configuration?
+Ans: <No>
+
+## The DNS domain name is used to construct the base DN of the LDAP directory. For example, 'foo.example.org' will create the directory with 'dc=foo, dc=example, dc=org' as base DN.
+DNS domain name : 
+Ans: practice.kk.com
+
+## Please enter the name of the organization to use in the base DN of your LDAP directory.
+Organization name: 
+Ans: korg
+
+## Please enter the password for the admin entry in your LDAP directory.
+Administrator password:
+Ans: 
+
+## Do you want the database to be removed when slapd is purged?
+Ans: <No>
+
+## There are still files in /var/lib/ldap which will probably break the configuration process. If you enable this option, the maintainer scripts will move the old database files out of the way before creating a new database.
+Move old database? 
+Ans : <Yes>
+
+#Verify if slapd is configured properly
 
 kk@kkbox:~$ sudo tree /etc/ldap/slapd.d
 /etc/ldap/slapd.d
@@ -32,22 +54,22 @@ kk@kkbox:~$ sudo tree /etc/ldap/slapd.d
 
 # Create a new file "add_entries.ldif" with below content inside
 
-dn: ou=Employee,dc=practice,dc=com
+dn: ou=Employee,dc=practice,dc=kk,dc=com
 objectClass: organizationalUnit
 ou: Employee
 
-dn: ou=Groups,dc=practice,dc=com
+dn: ou=Groups,dc=practice,dc=kk,dc=com
 objectClass: organizationalUnit
 ou: Groups
 
-dn: cn=developers,ou=Groups,dc=practice,dc=com
+dn: cn=developers,ou=Groups,dc=practice,dc=kk,dc=com
 objectClass: posixGroup
 cn: developers
 gidNumber: 5000
 
-dn: uid=allen,ou=Employee,dc=practice,dc=com
+dn: uid=allen,ou=Employee,dc=practice,dc=kk,dc=com
 objectClass: inetOrgPerson
-objectClass: posixGroup
+objectClass: posixAccount
 objectClass: shadowAccount
 uid: allenjoe
 sn: joe
@@ -60,9 +82,9 @@ userPassword: allen123
 loginShell: /bin/bash
 homeDirectory: /home/allen
 
-dn: uid=bob,ou=Employee,dc=practice,dc=com
+dn: uid=bob,ou=Employee,dc=practice,dc=kk,dc=com
 objectClass: inetOrgPerson
-objectClass: posixGroup
+objectClass: posixAccount
 objectClass: shadowAccount
 uid: bobstanly
 sn: stanly
@@ -78,4 +100,4 @@ homeDirectory: /home/bob
 
 # Add the File to LDAP
 
-ldapadd -x -D cn=admin,dc=practice,dc=com -W -f /home/kk/Desktop/openldap/add_entries.ldif
+ldapadd -x -D cn=admin,dc=practice,dc=kk,dc=com -W -f /home/kk/Desktop/openldap/add_entries.ldif
