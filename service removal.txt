@@ -1,0 +1,8 @@
+systemctl stop kkmidserver1
+systemctl disable kkmidserver1
+rm /etc/systemd/system/kkmidserver1
+rm /etc/systemd/system/kkmidserver1.service
+rm /usr/lib/systemd/system/kkmidserver1
+rm /usr/lib/systemd/system/kkmidserver1.service
+systemctl daemon-reload
+systemctl reset-failed
