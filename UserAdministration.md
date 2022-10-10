@@ -31,11 +31,9 @@
   
 > sudo usermod -aG <group_name> <user_name>
 
-
-  ### Add User to a sudo Group
-  
+  ``` 
   > sudo usermod -aG sudo <user_name>
-
+  ```
 
 
 
