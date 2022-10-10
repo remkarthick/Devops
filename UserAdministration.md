@@ -54,7 +54,10 @@ example : (the below command will add the user to the sudo group/sudoers list)
 ```
 sudo usermod -aG sudo <user_name>
 ```
-
+for centos add the user to a group named wheel, this will add the user to the sudoers list
+```
+usermod -aG wheel <user_name>
+```
 Additionally the  **gpasswd** command also will add user to a group
 
 ```
