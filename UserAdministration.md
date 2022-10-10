@@ -32,11 +32,45 @@ Note : Also, groups (or) groups <user_name> will display the groups of logged in
 
 ## Add User to a Group
   
-> sudo usermod -aG <group_name> <user_name>
+```
+sudo usermod -aG <group_names> <user_name>
+```
+> a - append
+> G - supplementary groups list
+
+> example : (the below command will add the user to the sudo group)
+> sudo usermod -aG sudo <user_name>
+
+` the gpasswd command also will add user to a group `
 
 ```
-sudo usermod -aG sudo <user_name>
+sudo gpasswd -a <user_name> <group_name>
+
 ```
+
+## Change the user's primary group
+
+```
+sudo usermod -g <group_name> <user_name>
+```
+> g - primary group
+
+## Remove User from a Group
+  
+```
+sudo gpasswd -d <user_name> <group_name>
+```
+> a - append
+
+## Create a new Group
+  
+> sudo groupadd <group_name>
+
+```
+Note : you can use **sudo groupdel <group_name> ** to delete a preexisting group.
+```
+
+
 
 
 
