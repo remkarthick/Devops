@@ -4,7 +4,9 @@
 
 > sudo useradd -m <user_name>
   
-```-m will create a home directory as well for the specified user```
+```
+-m will create a home directory as well for the specified user
+```
 
 ## Delete a User
 
@@ -19,8 +21,9 @@
 ## Get the id, primary group and other groups of a user
   
 > sudo id <user_name_optional>
-> Note : Also, groups (or) groups <user_name> will display the groups of logged in user/specified user
-
+```
+Note : Also, groups (or) groups <user_name> will display the groups of logged in user/specified user
+```
 ## Get All Groups in the System
   
 > sudo cat /etc/group
@@ -31,9 +34,9 @@
   
 > sudo usermod -aG <group_name> <user_name>
 
-  ``` 
-  > sudo usermod -aG sudo <user_name>
-  ```
+```
+sudo usermod -aG sudo <user_name>
+```
 
 
 
