@@ -1,12 +1,14 @@
 # Methods to Switch as a Root User in Linux
 
+> Difference between sudo and su
+
 | sudo | su |
 |-|-|
 |superuser do| switch user |
 | runs your commands with elevated prvileges | to switch as another user |
 | will ask your password | will ask the specified users password |
 
-
+> Provided below are the methods you can use to switch as a root user
 
 ## Method 1
 
