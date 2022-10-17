@@ -39,20 +39,26 @@ vagrant up <name>
 `
 vagrant up <id>
 `
-> you can get the id using the command
+> you can start the guest vm from any folder using the "id". you can get the id using the below command.
 
 `
 vagrant global-status
 `
-> you can start the guest vm from any folder using the <id>
+
 
 ## Get the status
 
 `
 vagrant status <name|id>
 `
+> get the state of the guest machine
 
-> get the status of the guest machine
+
+`
+vagrant global-status --prune
+`
+> get the state of all active Vagrant environments on the system from the cache(instead of from the actual run time, this is why we use prune to remove the inactive entries). 
+
 
 ## Suspend , Halt and Destroy
 
