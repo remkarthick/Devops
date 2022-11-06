@@ -80,7 +80,7 @@ vagrant global-status --prune
 > get the state of all active Vagrant environments on the system from the cache(instead of from the actual run time, this is why we use prune to remove the inactive entries). 
 
 
-## Suspend , Halt and Destroy
+## Suspend , Resume, Halt,  Destroy and Remove
 
 > suspend is similar to a sleep mode, if you need to make changes to the vagrant file you can put it in suspend mode ->make changes and then resume it.
 
@@ -105,10 +105,42 @@ vagrant halt <name|id>
 vagrant destroy <name|id>
 ```
 
+> The remove command is used to remove the box itself from vagrant. You can get the box name using teh vagrant box list command
+
+> if you remove the box and try to use the image that uses the removed box, then the vaggarnt will download  the box again from the internet.
+```
+vagrant remove <box_name>
+```
+
+
 ## List all the vagrant boxes available
 
 ```
 vagrant box list
 ```
 
+## Check if the box is out dated and update it
+
+>to check if the box is outdated
+```
+vagrant box outdated
+```
+> to update the box
+```
+vagrant box update
+```
+
+## Add a box to vagrant, but do not create Vagrant file
+
+```
+vagrant box add ubuntu/trusty64
+```
+> this command downloads ubuntu/trusty64 box and keeps it ready for future use. When you need to use you can do so by create a new folder and run vagrant init ubuntu/trusty64 and vagrant up. This time instead of downloading from internet, it will use the already downloaded box.
+
+## To Add a box to vagrant from a specific url
+
+```
+vagrant box add <box_name> <url>
+
+```
 
