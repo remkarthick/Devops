@@ -1,17 +1,21 @@
 # Vagrant Commands Guide
 
 ## Check the vagrant version
-`
+```
 vagrant --version
-`
+```
 
 
 ## Initialize the current directory to be a Vagrant environment 
 
-`
+```
 vagrant init centos/7
-`
+```
+> before running this command you have to move to a directory where you want to crea
+
 > this command will create a Vagrantfile if it doesn't already exist.
+
+> here 'centos/7' is a vagrant box, you can find a list of such boxes in https://app.vagrantup.com/boxes/search
 
 
 `
@@ -20,7 +24,7 @@ vagrant init -m centos/7
 > -m will reate a Vagrantfile that is minimal without any instructional comments
 
 `
-vagrant init -f hashicorp/precise64
+vagrant init -f centos/7
 `
 > -f will replace the existing Vagrant file with a new file
 
