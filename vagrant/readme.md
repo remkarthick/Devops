@@ -59,6 +59,12 @@ vagrant up <id>
 vagrant global-status
 ```
 
+## SSH into the vagrant instance
+
+```
+vagrant ssh
+```
+
 
 ## Get the status
 
@@ -76,7 +82,7 @@ vagrant global-status --prune
 
 ## Suspend , Halt and Destroy
 
-> suspend is similar to a sleep mode
+> suspend is similar to a sleep mode, if you need to make changes to the vagrant file you can put it in suspend mode ->make changes and then resume it.
 
 ```
 vagrant suspend <name|id>
