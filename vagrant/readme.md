@@ -143,4 +143,25 @@ vagrant box add ubuntu/trusty64
 vagrant box add <box_name> <url>
 
 ```
+## Vagrant plugin commands
+
+List of all plugins can be viewed from **https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins**
+
+> list all plugins available in your local vagrant
+```
+vagrant plugin list
+```
+
+> install, uninstall and update plugin 
+```
+vagrant plugin install <plugin_name>
+```
+
+```
+vagrant plugin uninstall <plugin_name>
+```
+
+```
+vagrant plugin update <plugin_name>
+```
 
