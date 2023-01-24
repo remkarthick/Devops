@@ -1,21 +1,45 @@
 # Set Proxy for Docker
 
-1. Create a new directory for docker.service.d
+1. Create a new directory docker.service.d
 
-sudo mkdir -p /etc/systemd/system/docker.service.d
+`sudo mkdir -p /etc/systemd/system/docker.service.d`
 
-2. Create a new file inside the above folder
 
-sudo vi /etc/systemd/system/docker.service.d/proxy.conf
+2. Add the below contents to the above file http-proxy.conf
 
-3. Add the below contents to the above file proxy.conf
 
+`sudo vi /etc/systemd/system/docker.service.d/http-proxy.conf`
+
+```
 [Service]
-Environment="HTTP_PROXY=http://rb-proxy-apac.bosch.com:8080"
-Environment="HTTPS_PROXY=http://rb-proxy-apac.bosch.com:8080"
-Environment="NO_PROXY="localhost,127.0.0.1,::1"
+Environment="HTTP_PROXY=http://proxy_server_name:port"
+Environment="HTTPS_PROXY=http://proxy_server_name:port"
+```
 
+3. Edit resolv.conf 
 
-4. Reload the daemon
+`sudo vim /etc/resolv.conf`
 
+4.  Add the below lines above the existing nameserver
+
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+5. Reload the daemon and restart docker
+
+```
 sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+6. Verify if proxy is in docker environment
+
+`sudo systemctl show --property=Environment docker`
+
+
+7. Check if docker run is working
+
+`sudo docker run hello-world`
+
