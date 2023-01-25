@@ -4,7 +4,7 @@
 
  `sudo vi /etc/apt/apt.conf`
  
- 2. Add the proxy information to teh file
+ 2. Add the proxy information to the file
 ```
 Acquire::http::Proxy "http://proxyservername:proxyserverport";
 Acquire::https::Proxy "http://proxyservername:proxyserverport";
