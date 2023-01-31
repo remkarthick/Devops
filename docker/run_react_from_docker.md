@@ -79,6 +79,6 @@ docker images
 ```
 > run the below command to run the image as a container in docker
 ```
-docker run -p 3000:3000 <image_id>
+docker run -p <port_that_docker_exposes_to_outside_world_this_can_be_any_port>>:<application_port_within_docker_container> <image_id>
 ```
 > ex. docker run -p 3000:3000 cc533ea96fb1
