@@ -1,31 +1,39 @@
 # Create a React Project
 
+```
 npx create-react-app frontend
+```
 
 # Get into React project folder
-
+```
 cd frontend
-
+```
 # Test the React project and build it
 
 > runs test
 
-`npm run test`
+```
+npm run test
+```
 
 > builds a production version of the application
 
-`npm run build`
+```
+npm run build
+```
 
 ** Note **
 
 > starts up a development server. don't use this for production
 
-`npm run start`
+```
+npm run start
+```
 
 # Inside the react project folder create a new Dockerfile with a custom name Dockerfile.dev
-
+```
 nano Dockerfile.dev
-
+```
 > this is only for the dev environment as its going to contain npm run start, which is development server command
 > the server docker file is just Dockerfile which is going to have the command npm run build
 
@@ -58,6 +66,6 @@ CMD ["npm","run","start"]
 
 # Build the image using the custom Dockerfile.dev
 
-`
+```
 docker build -f Dockerfile.dev . 
-`
+```
