@@ -70,3 +70,15 @@ CMD ["npm","run","start"]
 ```
 docker build -f Dockerfile.dev . 
 ```
+
+# Start the image that you have created
+
+> run docker images to get the image id
+```
+docker images
+```
+> run the below command to run the image as a container in docker
+```
+docker run -p 3000:3000 <image_id>
+```
+> ex. docker run -p 3000:3000 cc533ea96fb1
