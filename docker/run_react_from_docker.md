@@ -87,6 +87,9 @@ docker run -p <port_that_docker_exposes_to_outside_world_this_can_be_any_port>>:
 
 ```
  docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app cc533ea96fb1
- ```
-> -v /app/node_modules  --> means use the /app/node_modules within the container as it is, dont mess with it.
+```
+>  -v /app/node_modules  --> means use the /app/node_modules within the container as it is, dont mess with it.
+
 >  -v $(pwd):/app       --> means use/map the content of pwd(present working directory) of local system to the /app directory of the container
+
+
