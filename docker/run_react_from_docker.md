@@ -15,6 +15,7 @@ cd frontend
 ```
 npm run test
 ```
+› Press q to quit watch mode 
 
 > builds a production version of the application
 
