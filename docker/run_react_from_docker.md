@@ -22,7 +22,7 @@ cd frontend
 
 `npm run start`
 
-# Inside the react project folder create a new file
+# Inside the react project folder create a new Dockerfile with a custom name Dockerfile.dev
 
 nano Dockerfile.dev
 
@@ -55,3 +55,9 @@ CMD ["npm","run","start"]
 
 
 ```
+
+# Build the image using the custom Dockerfile.dev
+
+`
+docker build -f Dockerfile.dev . 
+`
