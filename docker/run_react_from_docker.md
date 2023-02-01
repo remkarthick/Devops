@@ -93,3 +93,23 @@ docker run -p <port_that_docker_exposes_to_outside_world_this_can_be_any_port>>:
 >  -v $(pwd):/app       --> means use/map the content of pwd(present working directory) of local system to the /app directory of the container
 
 
+# Using Docker Compose
+
+> docker-compose.yml
+
+```
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+```
+> - /app/node_modules --> means dont refer anything for the /app/node_modules within the container
+> - .:/app            --> means refer the current folder in your local machine to the /app folder of the container
+
+
