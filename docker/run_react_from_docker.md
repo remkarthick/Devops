@@ -101,7 +101,9 @@ docker run -p <port_that_docker_exposes_to_outside_world_this_can_be_any_port>>:
 version: "3"
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     volumes:
@@ -110,6 +112,9 @@ services:
 
 ```
 > - /app/node_modules --> means dont refer anything for the /app/node_modules within the container
+
 > - .:/app            --> means refer the current folder in your local machine to the /app folder of the container
 
+
+> docker compose up
 
