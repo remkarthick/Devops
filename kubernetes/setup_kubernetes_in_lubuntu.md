@@ -54,5 +54,39 @@ sudo ufw reload
 > Always refer to below link for installation of kubernetes
 > https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
+> install curl if its not available
+`
+sudo apt install curl
+
+`
+
+> create a folder to temporarily store the kubectl download
+`
+cd /home/kk
+mkdir kubectl
+cd kubectl
+`
+
+> download the latest version of kubectl to current folder
+`
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+`
+> verify if the downloaded file is valid
+
+`
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+`
+
+`
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+`
+- kubectl: OK
 
 
+> move to the /usr/local/bin using the below command
+
+`
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+`
+- -o  = owner, -g = group ownership,  -m = permission mode
+-  install is used to copy files and set attributes
