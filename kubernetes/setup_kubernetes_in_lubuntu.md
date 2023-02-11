@@ -38,3 +38,21 @@ sudo apt install openssh-server
 > Check again
 sudo systemctl status ssh
 
+> Open Firewall Port ( If Firewall is enabled)
+
+`
+sudo ufw allow 22
+`
+`
+sudo ufw reload
+`
+
+- now using port forwarding, you will be able to access ssh from your local machine
+
+# Install Kubernetes
+
+> Always refer to below link for installation of kubernetes
+> https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+
+
