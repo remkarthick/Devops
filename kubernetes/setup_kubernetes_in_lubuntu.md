@@ -52,6 +52,7 @@ sudo ufw reload
 `
 
 - now using port forwarding, you will be able to access ssh from your local machine
+![image](https://user-images.githubusercontent.com/36703610/218302571-35d1bb31-6179-41ae-a165-8d6414fecb61.png)
 
 # Install Kubernetes
 
