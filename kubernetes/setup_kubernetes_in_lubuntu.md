@@ -73,9 +73,11 @@ cd kubectl
 `
 
 > download the latest version of kubectl to current folder
+
 `
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 `
+
 > verify if the downloaded file is valid
 
 `
