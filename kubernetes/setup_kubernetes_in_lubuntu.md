@@ -113,4 +113,17 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
 
+> check if its working
+
+`
+kind version
+`
+
+# For user to access shared folder from windows to linux
+
+`
+usermod -aG vboxsf kk
+`
+> vboxsf is the group name which has access to shared folder
+> kk is the user name
 
