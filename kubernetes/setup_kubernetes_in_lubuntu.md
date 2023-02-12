@@ -62,15 +62,13 @@ sudo ufw reload
 > install curl if its not available
 
 `
-sudo apt install curl
+sudo apt install -y curl
 `
 
 > create a folder to temporarily store the kubectl download
 
 `
-cd /home/kk
-mkdir kubectl
-cd kubectl
+cd ~/Downloads && mkdir kubectl && cd kubectl
 `
 
 > download the latest version of kubectl to current folder
@@ -88,7 +86,7 @@ curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/b
 `
 echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 `
-- kubectl: OK
+- Output should be  kubectl: OK
 
 
 > move to the /usr/local/bin using the below command
@@ -98,3 +96,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 `
 - -o  = owner, -g = group ownership,  -m = permission mode
 -  install is used to copy files and set attributes
+
+> check if kubectl is working
+
+`
+kubectl version --client --output=json
+`
