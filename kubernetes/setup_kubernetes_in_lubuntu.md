@@ -60,12 +60,13 @@ sudo ufw reload
 > https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 > install curl if its not available
+
 `
 sudo apt install curl
-
 `
 
 > create a folder to temporarily store the kubectl download
+
 `
 cd /home/kk
 mkdir kubectl
