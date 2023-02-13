@@ -123,13 +123,13 @@ kind version
 
 share a folder from your host machine to the guest machine.
 
-> from linux vm the shared folder will be available in /media/sf_shared
+From linux vm the shared folder will be available in /media/sf_shared . To access the shared folder in linux, you must add your user to the group named vboxsf( obtained by running "ls -l /media/sf_shared")
 
-> to access the shared folder in linux, you must add your user to the group named vboxsf( obtained by running "ls -l /media/sf_shared")
 
-`
-usermod -aG vboxsf kk
-`
+```
+sudo usermod -aG vboxsf kk
+```
+
 vboxsf is the group name which has access to shared folder, kk is the user name
 
 > created a link in your linux desktop for the shared folder for ease of use
