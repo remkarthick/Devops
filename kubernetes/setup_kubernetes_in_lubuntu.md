@@ -212,3 +212,9 @@ NETWORK ID     NAME      DRIVER    SCOPE
 d23ad7a0d91e   kind      bridge    local
 9542858eb4f0   none      null      local
 ```
+
+> To check the master/control-plane configuration, such as ip address and port
+
+```
+cat ~/.kube/config
+```
