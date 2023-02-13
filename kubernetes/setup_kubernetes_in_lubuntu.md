@@ -301,7 +301,7 @@ ps -ef|grep -n -T -E 'kube|etcd'
 kind delete cluster --name kind
 ```
 
-Note: you can get the cluster name from `cat ~/.kube/config`
+Note: you can get the cluster name from `kind get clusters`
 
 
 
