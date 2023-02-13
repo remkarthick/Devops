@@ -218,3 +218,45 @@ d23ad7a0d91e   kind      bridge    local
 ```
 cat ~/.kube/config
 ```
+
+> run the below command now and you will get server version information without error(previously before the cluster configuration this command would have given error)
+
+```
+kubectl version --output=json
+```
+
+# Get Nodes
+
+```
+kubectl get nodes
+```
+
+Sample Output : 
+
+```
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   51m   v1.25.3
+kind-worker          Ready    <none>          51m   v1.25.3
+kind-worker2         Ready    <none>          51m   v1.25.3
+
+```
+# Get insde the individual node
+
+```
+docker ps
+```
+
+Sample Output : 
+
+```
+CONTAINER ID   IMAGE                  COMMAND                  CREATED             STATUS             PORTS                       NAMES
+e81d8c200680   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour ago   Up About an hour                               kind-worker
+e239f6dea47b   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour ago   Up About an hour   127.0.0.1:37535->6443/tcp   kind-control-plane
+492597f05043   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour ago   Up About an hour                               kind-worker2
+```
+
+> get inside the control-plane/master
+
+```
+docker exec -it e239f6dea47b
+```
