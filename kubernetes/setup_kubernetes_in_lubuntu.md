@@ -240,7 +240,7 @@ kind-worker          Ready    <none>          51m   v1.25.3
 kind-worker2         Ready    <none>          51m   v1.25.3
 
 ```
-# Get insde the individual node
+# Get inside the individual node
 
 ```
 docker ps
@@ -290,6 +290,20 @@ total 16
 ```
 ps -ef|grep -n -T -E 'kube|etcd'
 ```
+
+# Delete the cluster
+
+> exit from the master/control-plane or node/worker if you are already in it.
+
+> delete the cluster
+
+```
+kind delete cluster --name kind
+```
+
+Note: you can get the cluster name from `cat ~/.kube/config`
+
+
 
 
 
