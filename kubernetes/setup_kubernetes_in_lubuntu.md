@@ -194,11 +194,21 @@ kubectl cluster-info --context kind-kind
 Have a nice day! 👋
 ```
 
-> Run `docker ps` you will see below output (3 containers are created and running)
+> Run `docker ps` you will see below output (3 containers are created and running). You will see control-plane running with a port.
 
 ```
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
 e81d8c200680   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes                               kind-worker
 e239f6dea47b   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes   127.0.0.1:37535->6443/tcp   kind-control-plane
 492597f05043   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes                               kind-worker2
+```
+
+> Run `docker network ls`. you will see a bridge for kind
+
+```
+NETWORK ID     NAME      DRIVER    SCOPE
+384ee97ab44f   bridge    bridge    local
+53775eb65e3a   host      host      local
+d23ad7a0d91e   kind      bridge    local
+9542858eb4f0   none      null      local
 ```
