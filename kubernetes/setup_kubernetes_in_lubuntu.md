@@ -161,6 +161,12 @@ nodes:
 ```
 > Run the command as below
 
+Note: you may need to clean docker before proceeding to create a cluster
+
+`docker ps -a ` should return nothing
+run `docker system prune` afterwards
+
+
 ```
 kind create cluster --config kind-example-config.yaml
 ```
