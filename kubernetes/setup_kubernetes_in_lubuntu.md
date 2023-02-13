@@ -140,7 +140,33 @@ ln -s /media/sf_shared ~/Desktop/shared
 
 # Install Docker
 
+> Manual Installation
+
 Refer https://github.com/remkarthick/Devops/blob/main/docker/02.Install_Docker.md
+
+# Setting Local Cluster to Learn Kubernetes using kind
+
+Refer https://kind.sigs.k8s.io/docs/user/quick-start/#creating-a-cluster
+
+> Create a yaml file with the name kind-example-config.yaml
+
+```
+# three node (two workers) cluster config
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+```
+> Run the command as below
+
+```
+kind create cluster --config kind-example-config.yaml
+```
+
+
+
 
 
 
