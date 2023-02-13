@@ -255,7 +255,7 @@ e239f6dea47b   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour a
 492597f05043   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour ago   Up About an hour                               kind-worker2
 ```
 
-> get inside the control-plane/master
+> get inside the control-plane/master to check important files
 
 ```
 docker exec -it e239f6dea47b bash
@@ -266,3 +266,30 @@ Sample Output :
 ```
 root@kind-control-plane:/#
 ```
+
+> Important yaml files inside the control plane
+
+```
+cd /etc/kubernetes/manifests/
+ls -l
+```
+
+Sample Output :
+
+```
+total 16
+-rw------- 1 root root 2382 Feb 13 08:34 etcd.yaml
+-rw------- 1 root root 3873 Feb 13 08:34 kube-apiserver.yaml
+-rw------- 1 root root 3405 Feb 13 08:34 kube-controller-manager.yaml
+-rw------- 1 root root 1440 Feb 13 08:34 kube-scheduler.yaml
+
+```
+
+> Check the processess running for kube inside master/control-plane
+
+```
+ps -ef|grep -n -T -E 'kube|etcd'
+```
+
+
+
