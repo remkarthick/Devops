@@ -258,5 +258,11 @@ e239f6dea47b   kindest/node:v1.25.3   "/usr/local/bin/entr…"   About an hour a
 > get inside the control-plane/master
 
 ```
-docker exec -it e239f6dea47b
+docker exec -it e239f6dea47b bash
+```
+
+Sample Output :
+
+```
+root@kind-control-plane:/#
 ```
