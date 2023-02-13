@@ -163,8 +163,9 @@ nodes:
 
 Note: you may need to clean docker before proceeding to create a cluster
 
-`docker ps -a ` should return nothing
-run `docker system prune` afterwards
+`docker ps -a ` should return nothing.
+
+run `docker system prune` afterwards.
 
 
 ```
