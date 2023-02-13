@@ -175,3 +175,30 @@ kind create cluster --config kind-example-config.yaml
 ```
 
 
+> Sample Output
+
+```
+Creating cluster "kind" ...
+ ✓ Ensuring node image (kindest/node:v1.25.3) 🖼
+ ✓ Preparing nodes 📦 📦 📦
+ ✓ Writing configuration 📜
+ ✓ Starting control-plane 🕹️
+ ✓ Installing CNI 🔌
+ ✓ Installing StorageClass 💾
+ ✓ Joining worker nodes 🚜
+Set kubectl context to "kind-kind"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-kind
+
+Have a nice day! 👋
+```
+
+> Run `docker ps` you will see below output (3 containers are created and running)
+
+```
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
+e81d8c200680   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes                               kind-worker
+e239f6dea47b   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes   127.0.0.1:37535->6443/tcp   kind-control-plane
+492597f05043   kindest/node:v1.25.3   "/usr/local/bin/entr…"   26 minutes ago   Up 25 minutes                               kind-worker2
+```
