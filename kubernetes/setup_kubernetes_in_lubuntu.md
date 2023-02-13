@@ -167,6 +167,8 @@ Note: you may need to clean docker before proceeding to create a cluster
 
 run `docker system prune` afterwards.
 
+if there is anythin inside `cd ~/.kube` then delete it.
+
 
 ```
 kind create cluster --config kind-example-config.yaml
