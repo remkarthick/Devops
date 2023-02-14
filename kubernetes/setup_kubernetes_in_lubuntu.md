@@ -344,5 +344,9 @@ Run the command `kubectl get pod` to check or `watch -t -x kubectl get pod` to m
 
 
 
+# Describe a Pod
 
+ `kubectl describe pod`
+ 
+ 
 
