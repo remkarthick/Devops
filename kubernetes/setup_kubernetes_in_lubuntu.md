@@ -303,6 +303,45 @@ kind delete cluster --name kind
 
 Note: you can get the cluster name from `kind get clusters`
 
+# Create Pod
+
+- Pod is a type of workload. Its a collection of containers
+
+> Reference
+
+refer Pod in https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/
+
+> create a new file `01-simple-pod.yaml`
+
+```
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: kk-pod
+spec:
+  containers:
+  - name: nginx-kk
+    image: nginx
+```
+
+> Check if pods are running
+
+If cluster is not running run it. To Verify if its running 'kubectl get nodes`. To run it `kind create cluster --config ~/Desktop/shared/kind-learn/Lesson1/kind-example-config.yaml`
+
+Run the command `kubectl get pod` to check or `watch -t -x kubectl get pod` to monitor if there are any pods available.
+
+> create a pod
+
+`kubectl create -f 01-simple-pod.yaml`
+
+> check if pod is running
+
+`kubectl get pod`
+
+> delete a pod
+
+`kubectl delete -f 01-simple-pod.yaml`
+
 
 
 
