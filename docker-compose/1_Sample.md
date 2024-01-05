@@ -6,10 +6,11 @@ cd compose/
 docker compose
 
 # Download docker-compose.yml file for vprofile project
+```
 wget https://raw.githubusercontent.com/remkarthick/Devops/main/docker-compose/docker-compose.yml
 ls
 vim docker-compose.yml
-
+```
 # Bring up all the containers
 docker compose up -d
 docker compose ps
