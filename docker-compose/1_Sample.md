@@ -6,7 +6,7 @@ cd compose/
 docker compose
 
 # Download docker-compos.yml file for vprofile project
-wget https://raw.githubusercontent.com/devopshydclub/vprofile-project/docker/compose/docker-compose.yml
+wget https://raw.githubusercontent.com/remkarthick/Devops/main/docker-compose/docker-compose.yml
 ls
 vim docker-compose.yml
 
