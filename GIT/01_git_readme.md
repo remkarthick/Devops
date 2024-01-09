@@ -91,9 +91,12 @@ git commit -m "kk's first commit"
 -------------------------------
 # II ) Working with remote repository
 
-# a) Local to remote
+# 1) Local to remote
 
-# b) Remote to local
+> cd to local repo
+> `git remote add origin `ssh://git@github.com/[username]/[repo-name].git
 
-> git clone `URL`
+# 2) Remote to local
+
+> `git clone `URL
 
