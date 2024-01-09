@@ -1,3 +1,5 @@
+# I) Working in Local Repository
+
 # Create a local git repository
 
 - go to any directory /create a new directory and get in that directory and type the below command
@@ -86,5 +88,12 @@ git config --global --get user.name
 git commit -m "kk's first commit"
 ```
 - only the files that are staged(git add) will be committed to local repo
+-------------------------------
+# II ) Working with remote repository
 
+# a) Local to remote
+
+# b) Remote to local
+
+> git clone `URL`
 
