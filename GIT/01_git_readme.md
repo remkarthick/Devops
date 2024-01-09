@@ -94,6 +94,7 @@ git commit -m "kk's first commit"
 # 1) Local to remote
 
 > cd to local repo
+
 > `git remote add origin `ssh://git@github.com/[username]/[repo-name].git
 
 # 2) Remote to local
