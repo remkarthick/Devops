@@ -48,5 +48,5 @@ ForceCommand internal-sftp
 
 # Connect to the SFTP from your windows command prompt
 ```
-sftp -P 2022 kk@192.168.1.3
+sftp -P <port_number> <user_name>@<ip_address>
 ```
