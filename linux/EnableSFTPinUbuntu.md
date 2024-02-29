@@ -45,3 +45,8 @@ ForceCommand internal-sftp
 ```
 # Restart the ssh service
 ` sudo systemctl restart ssh `
+
+# Connect to the SFTP from your windows command prompt
+```
+sftp -P 2022 kk@192.168.1.3
+```
