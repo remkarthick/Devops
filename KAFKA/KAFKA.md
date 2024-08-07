@@ -36,3 +36,26 @@ From /opt/confluent/kafka/confluent-7.7.0/bin$  run the below command
 ```
 ./kafka-topics --create --topic testtopic --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
 ```
+
+# Send Message Using Producer
+
+2 ways to sent message from Producer
+
+1. From Command Line
+
+```
+./kafka-console-producer --topic testtopic --broker-list localhost:9092
+>hello 3
+>^
+```
+
+2. From File
+```
+./kafka-console-producer --topic testtopic --broker-list localhost:9092 < ..\data\file.json
+
+```
+# Receive Message Using Consumer
+
+```
+/kafka-console-consumer --topic testtopic --bootstrap-server localhost:9092 --from-beginning
+```
