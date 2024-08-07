@@ -29,3 +29,10 @@ Start Kafka Server/Broker using below command
 ```
 ./kafka-server-start ../etc/kafka/server.properties
 ```
+
+# Create Kafka Topic
+
+From /opt/confluent/kafka/confluent-7.7.0/bin$  run the below command
+```
+./kafka-topics --create --topic testtopic --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
+```
