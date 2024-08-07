@@ -16,4 +16,13 @@ Start Zookeeper using below command
 ./zookeeper-server-start ../etc/kafka/zookeeper.properties
 ```
 
-# Start Kafka
+# Start Kafka Broker/Kafka Server
+
+Change directory to location where kafka is extracted
+```
+cd /opt/confluent/kafka/confluent-7.7.0/bin
+```
+Start Kafka Server/Broker using below command
+```
+./kafka-server-start ../etc/kafka/server.properties
+```
