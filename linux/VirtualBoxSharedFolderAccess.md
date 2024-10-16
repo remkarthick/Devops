@@ -4,8 +4,9 @@
 
 ```
 kk@kk-lubuntu-vbox:/media$ ls -lrt
-total 4
-drwxr-x---+ 3 root root   4096 Oct 16 18:05 kk
 drwxrwx---  1 root vboxsf    0 Oct 16 22:31 sf_SHARED
 ```
 
+```
+sudo usermod -aG vboxsf <user_name>
+```
