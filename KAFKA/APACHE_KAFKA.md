@@ -6,7 +6,7 @@
 # Extras : Connect to VM from Local Machine
 
 * Setup Port Forwarding for NAT
-** Protocol:TCP, HostIP:<IP Address of Local Machine>, Host Port: <Any Number>, Guest IP: <IP Address of VM>, Guest IP:<Open SSL Port from VM>
+** Protocol:TCP, HostIP:< IP Address of Local Machine >, Host Port: < Any Number >, Guest IP: < IP Address of VM >, Guest IP:< Open SSL Port from VM >
 * Create a batch file in windows and add the command `start ssh <user_name>@<Ip Address of Local Machine> -p <Host Port mentioned above>` and save the file. This can be used to open the VM's Linux terminal from your local machine
 
 # 1 . Download Kafka
