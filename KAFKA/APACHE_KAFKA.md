@@ -18,13 +18,13 @@
 
 # 3. Run the zookeeper command &
 
-`
+```
 cd /opt/kafka/bin
 ./zookeeper-server-start.sh ../config/zookeeper.properties
-`
+```
 open a different terminal and run kafka server
 
-`
+```
 cd /opt/kafka/bin
 ./kafka-server-start.sh ../config/server.properties
-`
+```
