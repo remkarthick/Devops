@@ -16,7 +16,7 @@
 
 # 2. Extract and place it under the /opt directory giving necessary permissions
 
-# 3. Run the zookeeper command &
+# 3. Start the zookeeper server & kafka server
 
 ```
 cd /opt/kafka/bin
@@ -28,3 +28,25 @@ open a different terminal and run kafka server
 cd /opt/kafka/bin
 ./kafka-server-start.sh ../config/server.properties
 ```
+
+# 4. Create kafka topic
+
+```
+cd /opt/kafka/bin
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic "topic1"
+```
+Note: you can obtain the port number from server.properties
+
+# 5. Sent message to a topic
+```
+cd /opt/kafka/bin
+./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic "topic1"
+```
+use Ctrl+D to exit the command
+
+# 6. Read message from a topic
+```
+cd /opt/kafka/bin
+./kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic "topic1" --from-beginning
+```
+
