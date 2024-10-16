@@ -44,6 +44,12 @@ cd /opt/kafka/bin
 ```
 use Ctrl+D to exit the command
 
+Note: Another way to sent input from a file to kafka
+```
+./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic "topic1"<a.txt
+```
+where a.txt is a file containing any text
+
 # 6. Read message from a topic
 ```
 cd /opt/kafka/bin
