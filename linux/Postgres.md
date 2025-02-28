@@ -14,3 +14,8 @@
 Will display postgresql.service as "active (exited)" because it was the parent wrapper , to find the "active (running)" service use the below command
 
 `sudo systemctl status postgresql*`
+
+# Which port Postgres running on 
+
+`pg_lsclusters`
+
