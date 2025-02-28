@@ -28,7 +28,7 @@ Will display postgresql.service as "active (exited)" because it was the parent w
 In `/etc/postgresql/16/main/postgresql.conf` set the below property
 
 ```
-#listen_addresses = 'localhost'		# what IP address(es) to listen on;
+#listen_addresses = '*'		# what IP address(es) to listen on;
 					# comma-separated list of addresses;
 					# defaults to 'localhost'; use '*' for all
 					# (change requires restart)
@@ -39,7 +39,9 @@ In `/etc/postgresql/16/main/pg_hba.conf` modify the below
 
 ```
 # IPv4 local connections:
-host    all             all             127.0.0.1/32            scram-sha-256
+host    all             all             0.0.0.0/0            scram-sha-256
 # IPv6 local connections:
-host    all             all             ::1/128                 scram-sha-256
+host    all             all             ::0/0                 scram-sha-256
 ```
+
+Restart postgres for teh configuration change to take effect
