@@ -7,6 +7,10 @@
 4. Update the password by issuing the sql statement
 `alter user postgres with password '<password>';`
 
+# Restart Postgres
+
+`sudo systemctl restart postgresql`
+
 # Check if Postgres is running
 
 `sudo systemctl status postgresql`
@@ -19,3 +23,23 @@ Will display postgresql.service as "active (exited)" because it was the parent w
 
 `pg_lsclusters`
 
+# Unable to connect to Postgres from a different machine
+
+In `/etc/postgresql/16/main/postgresql.conf` set the below property
+
+```
+#listen_addresses = 'localhost'		# what IP address(es) to listen on;
+					# comma-separated list of addresses;
+					# defaults to 'localhost'; use '*' for all
+					# (change requires restart)
+```
+
+
+In `/etc/postgresql/16/main/pg_hba.conf` modify the below
+
+```
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            scram-sha-256
+# IPv6 local connections:
+host    all             all             ::1/128                 scram-sha-256
+```
