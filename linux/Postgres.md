@@ -45,3 +45,7 @@ host    all             all             ::0/0                 scram-sha-256
 ```
 
 Restart postgres for teh configuration change to take effect
+
+# Firewall Update
+sudo ufw allow 5432
+sudo ufw reload
