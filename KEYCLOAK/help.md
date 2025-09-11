@@ -23,5 +23,5 @@ admin
 Note: kkrealm is the name of the realm
 
 ```
-https://kk-lubuntu-vbox:8443/realms/kkrealm/account
+https://localhost:8443/realms/kkrealm/account
 ```
