@@ -25,3 +25,11 @@ Note: kkrealm is the name of the realm
 ```
 https://localhost:8443/realms/kkrealm/account
 ```
+
+# Well known configuration url for OIDC
+
+```
+https://localhost:8443/realms/kkrealm/.well-known/openid-configuration
+
+```
+
