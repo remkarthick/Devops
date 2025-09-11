@@ -33,3 +33,10 @@ https://localhost:8443/realms/kkrealm/.well-known/openid-configuration
 
 ```
 
+# SAML IDP Metadata
+Select Realm --> Realm Settings -> Genaral -> Endpoints 
+
+```
+https://kk-lubuntu-vbox:8443/realms/kkrealm/protocol/saml/descriptor
+```
+
