@@ -17,3 +17,23 @@ Refer : `https://developer.hashicorp.com/vault/docs/commands`
 ```
 export VAULT_ADDR='http://localhost:8200'
 ```
+
+# Check if vault is running
+
+```
+vault status
+```
+
+# Start the vault server
+
+```
+vault server -dev
+```
+
+* This will start a inmemory vault which should not be used for production use
+* You will get an unseal key and root token. The root token which you can use to login to the local vault http://localhost:8200
+
+```
+Unseal Key: <some token>
+Root Token: <some other token>
+```
