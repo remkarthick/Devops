@@ -47,7 +47,7 @@ Root Token: <some other token>
 5. Add a new key named user and assign it a value.
 6. Add another key named pass and assign it a value.
 
-## To view the above details from the command line:
+## To view the credential details from the command line:
 
 Ensure the Vault server address is set as an environment variable (if not already configured):
 ```
@@ -82,4 +82,21 @@ Key         Value
 pass        ABCDED
 username    BOOMER
 
+```
+
+## To view credential using https(* note that the local vault server runs on http and not https)
+
+```
+curl \
+  --header "X-Vault-Token: <root_token_goes_here>" \
+  --request GET \
+  https://127.0.0.1:8200/v1/kv/data/jenkins
+```
+
+example :
+```
+curl \
+  --header "X-Vault-Token: hvs.12345etcetc" \
+  --request GET \
+  http://127.0.0.1:8200/v1/kv/data/jenkins
 ```
