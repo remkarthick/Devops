@@ -1,4 +1,4 @@
-# Installig Hashicorp Vault
+# Installing Hashicorp Vault
 
 Refer : `https://developer.hashicorp.com/vault/install`
 
@@ -37,3 +37,30 @@ vault server -dev
 Unseal Key: <some token>
 Root Token: <some other token>
 ```
+
+# Create a Secrets Engine to store credentials
+
+1. Navigate to the Vault URL.
+2. Go to Secrets Engine and click Enable new engine.
+3. Choose Generic -> KV as the engine type.
+4. Click Create secret and specify the path as jenkins.
+5. Add a new key named user and assign it a value.
+6. Add another key named pass and assign it a value.
+
+## To view the above details from the command line:
+
+Ensure the Vault server address is set as an environment variable (if not already configured):
+```
+export VAULT_ADDR='http://localhost:8200'
+```
+
+Execute the following command to retrieve the secret:
+```
+vault kv get -mount="kv" "jenkins"
+```
+
+Here, kv refers to the secrets engine mount, and jenkins is the secret path.
+
+Example:
+<img width="572" height="321" alt="image" src="https://github.com/user-attachments/assets/92d6d272-2c90-4365-802b-c8142a0d0ddb" />
+
