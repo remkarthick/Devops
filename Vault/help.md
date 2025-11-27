@@ -62,5 +62,24 @@ vault kv get -mount="kv" "jenkins"
 Here, kv refers to the secrets engine mount, and jenkins is the secret path.
 
 Example:
-<img width="572" height="321" alt="image" src="https://github.com/user-attachments/assets/92d6d272-2c90-4365-802b-c8142a0d0ddb" />
+```
+kk@kk-lubuntu-vbox:~$ vault kv get -mount="kv" "jenkins"
+= Secret Path =
+kv/data/jenkins
 
+======= Metadata =======
+Key                Value
+---                -----
+created_time       2025-11-27T16:49:56.795043968Z
+custom_metadata    <nil>
+deletion_time      n/a
+destroyed          false
+version            1
+
+====== Data ======
+Key         Value
+---         -----
+pass        ABCDED
+username    BOOMER
+
+```
