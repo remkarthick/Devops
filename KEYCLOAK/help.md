@@ -1,3 +1,21 @@
+# Check if WSL has a running server
+
+```
+wsl -l -v
+```
+Output:
+  NAME      STATE           VERSION
+* Alpine    Running         2
+
+
+# Start Apline
+
+```
+wsl -d Alpine
+```
+
+
+
 # Start Keycloak in Linux
 
 cd /opt/keycloak/keycloak-26.0.7/bin
