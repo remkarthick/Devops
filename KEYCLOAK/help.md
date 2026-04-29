@@ -110,6 +110,17 @@ chmod 777 start-keycloak.sh
 chmod 777 stop-keycloak.sh
 ```
 
+# Make Keycloak to listen to all adapters instead of just loopback ip and localhost
+--not working
+Stop Keycloak and run the below command
+
+```
+nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev --hostname-strict=false --http-host=0.0.0.0 > keycloak.log 2>&1 &
+```
+
+--http-host=0.0.0.0 → listen on all interfaces (not just localhost)
+--hostname-strict=false → allows access via hostname/IP (not just exact configured hostname)
+
 
 # Default URL 
 
