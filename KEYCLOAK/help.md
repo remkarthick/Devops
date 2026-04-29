@@ -121,6 +121,68 @@ nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev --hostname-strict=false 
 --http-host=0.0.0.0 → listen on all interfaces (not just localhost)
 --hostname-strict=false → allows access via hostname/IP (not just exact configured hostname)
 
+# Create Self Signed Certificate for https
+
+```
+cd /opt/keycloak
+mkdir certs
+cd /opt/keycloak/certs
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 1000000 -nodes
+
+**Country Name (2 letter code) [AU]:IN
+State or Province Name (full name) [Some-State]:KA
+Locality Name (eg, city) []:BLR
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:KK
+Organizational Unit Name (eg, section) []:KK
+Common Name (e.g. server FQDN or YOUR name) []:KK
+Email Address []:remkarthick@gmail.com**
+```
+**/opt/keycloak/certs$ **ls
+**cert.pem  key.pem**
+
+## Convert to PKCS12 (Keycloak needs this)
+
+```
+openssl pkcs12 -export \
+  -in cert.pem \
+  -inkey key.pem \
+  -out keycloak.p12 \
+  -name keycloak \
+  -password pass:changeit
+```
+**/opt/keycloak/certs$ **ls
+**cert.pem  key.pem  keycloak.p12**
+
+## Start keycloak with the new command
+
+```
+nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev \
+  --https-key-store-file=/opt/keycloak/certs/keycloak.p12 \
+  --https-key-store-password=changeit \
+  --hostname-strict=false \
+  --http-enabled=false \
+  > keycloak.log 2>&1 &
+
+```
+
+## Change the start file  "start-keycloak.sh" inside /opt/keycloak
+
+```
+#!/bin/bash
+
+KEYCLOAK_HOME="/opt/keycloak/keycloak-26.6.1"
+LOG_FILE="$KEYCLOAK_HOME/keycloak.log"
+
+echo "Starting Keycloak..."
+nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev \
+  --https-key-store-file=/opt/keycloak/certs/keycloak.p12 \
+  --https-key-store-password=changeit \
+  --hostname=localhost \
+  --hostname-strict=false \
+  > keycloak.log 2>&1 &
+
+```
+replace hostname with eq-ob9301164.ad.francetelecom.fr
 
 # Default URL 
 
