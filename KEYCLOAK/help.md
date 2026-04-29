@@ -121,6 +121,21 @@ nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev --hostname-strict=false 
 --http-host=0.0.0.0 → listen on all interfaces (not just localhost)
 --hostname-strict=false → allows access via hostname/IP (not just exact configured hostname)
 
+## Add 8443 port forwarding
+
+Inside ubuntu get the `hostname -I` command this is the WSL IP
+
+Replace it inside the below <WSL-IP> from powershell 
+
+```
+netsh interface portproxy add v4tov4 `
+listenport=8443 `
+listenaddress=0.0.0.0 `
+connectport=8443 `
+connectaddress=<WSL-IP>
+```
+
+
 # Create Self Signed Certificate for https
 
 ```
