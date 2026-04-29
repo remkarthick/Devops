@@ -47,23 +47,69 @@ export PATH=$JAVA_HOME/bin:$PATH
 echo 'export JAVA_HOME=/opt/openjdk25/jdk-25'>> ~/.profile
 echo 'export PATH=$JAVA_HOME/bin:$PATH'>> ~/.profile
 source ~/.profile
-
-
 ```
 
-# Download Keycloak
+# Download  and install Keycloak
 
 ```
+cd /downloads
 wget https://github.com/keycloak/keycloak/releases/download/26.6.1/keycloak-26.6.1.tar.gz
+ls
+tar -xzf keycloak-26.6.1.tar.gz
+ls
+sudo mkdir /opt/keycloak
+sudo chmod 777 /opt/keycloak
+mv keycloak-26.6.1 /opt/keycloak
 ```
 
 # Start Keycloak in Linux
 
-cd /opt/keycloak/keycloak-26.0.7/bin
+```
+cd /opt/keycloak/keycloak-26.6.1/bin
+nohup ./kc.sh start-dev>keycloak.log 2>&1 &
+```
+
+# Check running keycloak
 
 ```
-./kc.sh start
+ps -ef|grep keycloak
 ```
+
+
+# Stop Keycloak
+
+```
+pkill -f kc.sh
+```
+
+# Simplified Script
+
+## Create a new file "start-keycloak.sh" inside /opt/keycloak
+```
+#!/bin/bash
+
+KEYCLOAK_HOME="/opt/keycloak/keycloak-26.6.1"
+LOG_FILE="$KEYCLOAK_HOME/keycloak.log"
+
+echo "Starting Keycloak..."
+nohup "$KEYCLOAK_HOME/bin/kc.sh" start-dev > "$LOG_FILE" 2>&1 &
+
+echo "Keycloak started in background. Logs: $LOG_FILE"
+```
+
+
+## Create a new file "stop-keycloak.sh" inside /opt/keycloak
+```
+pkill -f kc.sh
+```
+
+## Change the execution rights of the file
+
+```
+chmod 777 start-keycloak.sh
+chmod 777 stop-keycloak.sh
+```
+
 
 # Default URL 
 
