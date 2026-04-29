@@ -174,7 +174,7 @@ KEYCLOAK_HOME="/opt/keycloak/keycloak-26.6.1"
 LOG_FILE="$KEYCLOAK_HOME/keycloak.log"
 
 echo "Starting Keycloak..."
-nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start-dev \
+nohup /opt/keycloak/keycloak-26.6.1/bin/kc.sh start \
   --https-key-store-file=/opt/keycloak/certs/keycloak.p12 \
   --https-key-store-password=changeit \
   --hostname=localhost \
